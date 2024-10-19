@@ -1,0 +1,38 @@
+langchain
+fastapi
+uvicorn
+pypdf
+PyPDF2
+jinja2
+chroma
+qdrant-client
+python-multipart
+aiofiles
+protobuf
+ml_dtypes
+opt_einsum
+transformers
+google.generativeai
+langchain-google-genai
+google-generativeai
+pytz
+requests~=2.27
+python-lokalise-api~=1.6
+python-dotenv~=0.20
+translators~=5.4
+deep-translator~=1.9
+requests 
+fpdf
+torch
+semantic-router==0.0.16
+pymongo
+mysql-connector
+mysql-connector-python
+langchain_community
+sentence-transformers
+
+
+
+# pip install git+https://github.com/huggingface/huggingface_hub
+# !pip install --upgrade --quiet langchain-google-genai
+# !pip install -q -U google-generativeai
