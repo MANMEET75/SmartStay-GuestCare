@@ -1,5 +1,9 @@
 # SmartStay-GuestCare
-SmartStay-GuestCare is an interactive hotel chatbot designed to provide guests with real-time information about hotel facilities, rooms, pricing, and services.
+- SmartStay-GuestCare is a sophisticated and interactive hotel chatbot specifically designed to enhance the guest experience by providing real-time information about a wide range of hotel facilities, accommodations, pricing options, and services. This innovative chatbot leverages advanced natural language processing to engage with guests in a conversational manner, allowing them to easily access essential information at any time.
+
+- Whether guests are inquiring about room availability, seeking details about amenities, or looking for the best pricing packages, SmartStay-GuestCare is equipped to deliver accurate and timely responses. The chatbot not only simplifies the process of gathering information but also assists in making informed decisions, ensuring a seamless experience from the moment guests check-in to their departure.
+
+- SmartStay-GuestCare can cater to diverse guest needs, making it an invaluable tool for both the hotel staff and guests. This commitment to providing exceptional service through technology makes SmartStay-GuestCare an essential component of modern hotel operations.
 
 <img src="static/demo1.png">
 <img src="static/demo2.png">
@@ -45,6 +49,5 @@ docker-compose down
 docker-compose up
 ```
 
-over here we reranker as well
 
 Enjoy Coding!
