@@ -118,7 +118,7 @@ connection.close()
 
 
 
-os.environ['GOOGLE_API_KEY'] =  'AIzaSyAXJGHWCDCE9OADfh_qCQpHm3iiLhVKeC8'
+os.environ['GOOGLE_API_KEY'] =  'AIzaSyD1p0v1sjPmwkPM17yEn-gM95YJ-y27OGo'
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
@@ -148,8 +148,8 @@ compression_retriever = ContextualCompressionRetriever(
 
 
 # llm = GoogleGenerativeAI(model="models/text-bison-001", google_api_key="AIzaSyCjyyhW36eS4Tkk6N2gITsBDOR6Q9kJeRI", temperature=0.1)
-llm=ChatGoogleGenerativeAI(model="gemini-1.5-pro")
-# llm=Ollama(base_url="https://0fbf-34-93-152-221.ngrok-free.app",model="mistral")
+llm=ChatGoogleGenerativeAI(model="gemini-1.5-flash-002")
+# llm=Ollama(base_url="https://81ba-34-93-180-130.ngrok-free.app",model="gemma2:27b")
 
 
 
@@ -293,6 +293,10 @@ async def get_response(query: str = Form(...),phoneNumber: str = Form(...),times
         writer.writerow(ticket)
 
     write_ticket_to_mongo(ticket)
+
+
+    print("Printing the response over here")
+    print(response)
  
     return response
 

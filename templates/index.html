@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,17 +18,19 @@
 
 
 </head>
+
 <body>
 
-    
+
 
     <div class="ChatWindow">
         <input type="tel" id="phoneNumber" style="visibility: hidden;" placeholder="Enter your phone number">
-    <!-- <div class="container chat-container"> -->
-            <div class="topHeading">
-                <!-- <img src="../static/chatbot.png" id="logo" alt="" width="50"> -->
-                <h1 class="heading" style="display: inline-block;"><span style="color: #F5F5F5;">SmartStay</span><span style="color: #B76E79;">-GuestCare</span></h1>
-            </div>
+        <!-- <div class="container chat-container"> -->
+        <div class="topHeading">
+            <!-- <img src="../static/chatbot.png" id="logo" alt="" width="50"> -->
+            <h1 class="heading" style="display: inline-block;"><span style="color: #F5F5F5;">SmartStay</span><span
+                    style="color: #B76E79;">-GuestCare</span></h1>
+        </div>
 
         <div id="chatHistory"></div>
         <select id="language-select">
@@ -59,44 +62,44 @@
                     <div class="ChatItem-timeStamp"><strong>Chat Bot</strong> • Today</div>
                 </div>
             </div>
-            
 
-        
+
+
             <!-- <div class="ChatInput is-hidey"> -->
-                <!-- <input onkeypress="clearInput(event)" type="text" id="question" placeholder="Ask your question..." name="question"> -->
+            <!-- <input onkeypress="clearInput(event)" type="text" id="question" placeholder="Ask your question..." name="question"> -->
             <!-- </div> -->
             <!-- <div id="chat-display"></div> -->
             <!-- <button id="startBtn" style="background-color: #3ebbc9;border: none;"><img width="35" style="position: relative;top: 400px;" src="https://cdn.pixabay.com/photo/2018/05/15/20/47/microphone-3404243_960_720.png" alt=""></button>
                 <div id="output"></div>
                 <div id="chat-display"></div> -->
-                
-                
-                
-                
-                
-                
-                
-                
-            </div>
 
-                <div class="inputtag">
-                    <input onkeypress="clearInput(event)" placeholder="Enter your message..." type="text" id="question"/>
-                </div>
-                <!-- <button id="voice-btn"><img src="../static/microphone 1.png" width="20" alt="" srcset=""></button> -->
-                <button id="voice-btn"><i class="fa-solid fa-microphone"></i></button>
-            </div>
+
+
+
+
+
+
+
+        </div>
+
+        <div class="inputtag">
+            <input onkeypress="clearInput(event)" placeholder="Enter your message..." type="text" id="question" />
+        </div>
+        <!-- <button id="voice-btn"><img src="../static/microphone 1.png" width="20" alt="" srcset=""></button> -->
+        <button id="voice-btn"><i class="fa-solid fa-microphone"></i></button>
+    </div>
     <script>
 
-            const voiceBtn = document.getElementById('voice-btn');
+        const voiceBtn = document.getElementById('voice-btn');
 
-            voiceBtn.addEventListener('click', () => {
+        voiceBtn.addEventListener('click', () => {
             voiceBtn.classList.add('clicked');
-            });
+        });
 
-            setTimeout(() => {
+        setTimeout(() => {
             voiceBtn.classList.remove('clicked');
             voiceBtn.style.color = '';
-            }, 7000); // Remove 'hovered' class after 5 seconds
+        }, 7000); // Remove 'hovered' class after 5 seconds
         // Get the phone number from the query parameter
 
 
@@ -106,7 +109,7 @@
         document.getElementById("phoneNumber").value = phone;
 
 
-      
+
 
 
         // document.getElementById('submitBtn').addEventListener('click', async function() {
@@ -134,109 +137,109 @@
         // });
 
         function submitForm() {
-                // Get the form element
-                var form = document.getElementById('uploadForm');
+            // Get the form element
+            var form = document.getElementById('uploadForm');
 
-                // Submit the form
-                form.submit();
+            // Submit the form
+            form.submit();
         }
 
         // Define language-specific greetings
         const greetings = {
-                        'en': 'Hello! How can I assist you?',
-                        'hi': 'नमस्ते! मैं आपकी कैसे सहायता कर सकता हूँ?',
-                        'bn': 'হ্যালো! কিভাবে আমি সাহায্য করতে পারি?',
-                        'te': 'హలో! నేను మీకు ఎలా సహాయపడగలను?',
-                        'mr': 'नमस्कार! माझं कसं सहाय्य करू शकतो?',
-                        'ta': 'வணக்கம்! நான் உங்களுக்கு எப்படி உதவ முடியும்?',
-                        'ur': 'ہیلو! میں آپ کی کس طرح مدد کر سکتا ہوں؟',
-                        'gu': 'હેલો! હું તમારી કેવી રીતે સહાય કરી શકું?',
-                        'kn': 'ಹಲೋ! ನಾನು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯಮಾಡಬಹುದು?',
-                        'ml': 'ഹലോ! ഞാൻ നിനക്ക് എങ്ങനെ സഹായിക്കാൻ സാധിക്കും?',
-                        'pa': 'ਹੈਲੋ! ਮੈ ਤੁਹਾਨੂੰ ਕਿਵੇਂ ਸਹਾਇਤਾ ਕਰ ਸਕਦਾ ਹਾਂ?',
-                        'or': 'ହେଲୋ! ମୁଁ ତୁମକୁ କେମିତି ସହାୟ୍ୟ କରିପାରିବ?',
+            'en': 'Hello! How can I assist you?',
+            'hi': 'नमस्ते! मैं आपकी कैसे सहायता कर सकता हूँ?',
+            'bn': 'হ্যালো! কিভাবে আমি সাহায্য করতে পারি?',
+            'te': 'హలో! నేను మీకు ఎలా సహాయపడగలను?',
+            'mr': 'नमस्कार! माझं कसं सहाय्य करू शकतो?',
+            'ta': 'வணக்கம்! நான் உங்களுக்கு எப்படி உதவ முடியும்?',
+            'ur': 'ہیلو! میں آپ کی کس طرح مدد کر سکتا ہوں؟',
+            'gu': 'હેલો! હું તમારી કેવી રીતે સહાય કરી શકું?',
+            'kn': 'ಹಲೋ! ನಾನು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯಮಾಡಬಹುದು?',
+            'ml': 'ഹലോ! ഞാൻ നിനക്ക് എങ്ങനെ സഹായിക്കാൻ സാധിക്കും?',
+            'pa': 'ਹੈਲੋ! ਮੈ ਤੁਹਾਨੂੰ ਕਿਵੇਂ ਸਹਾਇਤਾ ਕਰ ਸਕਦਾ ਹਾਂ?',
+            'or': 'ହେଲୋ! ମୁଁ ତୁମକୁ କେମିତି ସହାୟ୍ୟ କରିପାରିବ?',
         };
 
-       
+
 
 
 
         $(document).ready(function () {
-                        // var userInput = $('#userInput').val();
-                        function appendMessage(sender, message) {
-                            $("#chat-display").append("<p><strong>" + sender + ": </strong>" + message + "</p>");
-                        }
+            // var userInput = $('#userInput').val();
+            function appendMessage(sender, message) {
+                $("#chat-display").append("<p><strong>" + sender + ": </strong>" + message + "</p>");
+            }
 
-                        // Function to get the selected language and display the greeting
-                        function displayGreeting() {
-                            const selectedLanguage = $("#language-select").val();
-                            const greetingMessage = greetings[selectedLanguage];
-                            $(".ChatItem-chatText").text(greetingMessage);
-                            if (selectedLanguage === 'en') {
-                                // English with UK English Female voice
-                                responsiveVoice.speak(greetings['en'], "UK English Female", {rate: 0.98, pitch: 0.75,volume: 1.25});
-                            } else if (selectedLanguage === 'hi') {
-                                // Hindi with Indian Hindi Female voice
-                                responsiveVoice.speak(greetings['hi'], "Hindi Female", {rate: 0.98, pitch: 0.75,volume: 1.25});
-                            } else if (selectedLanguage === 'bn') {
-                                // Bengali with Indian Bengali Female voice
-                                responsiveVoice.speak(greetings['bn'], "Hindi Female", {rate: 0.98, pitch: 0.75,volume: 1.25});
-                            } else if (selectedLanguage === 'te') {
-                                // Telugu with Indian Telugu Female voice
-                                responsiveVoice.speak(greetings['te'], "Hindi Female", {rate: 0.98, pitch: 0.75,volume: 1.25});
-                            } else if (selectedLanguage === 'mr') {
-                                // Marathi with Indian Marathi Female voice
-                                responsiveVoice.speak(greetings['mr'], "Hindi Female", {rate: 0.98, pitch: 0.75,volume: 1.25});
-                            } else if (selectedLanguage === 'ta') {
-                                // Tamil with Indian Tamil Female voice
-                                responsiveVoice.speak(greetings['ta'], "Hindi Female", {rate: 0.98, pitch: 0.75,volume: 1.25});
-                            } else if (selectedLanguage === 'gu') {
-                                // Gujarati with Indian Gujarati Female voice
-                                responsiveVoice.speak(greetings['gu'], "Hindi Female", {rate: 0.98, pitch: 0.75,volume: 1.25});
-                            } else if (selectedLanguage === 'kn') {
-                                // Kannada with Indian Kannada Female voice
-                                responsiveVoice.speak(greetings['kn'], "Hindi Female", {rate: 0.98, pitch: 0.75,volume: 1.25});
-                            } else if (selectedLanguage === 'ml') {
-                                // Malayalam with Indian Malayalam Female voice
-                                responsiveVoice.speak(greetings['ml'], "Hindi Female", {rate: 0.98, pitch: 0.75,volume: 1.25});
-                            } else if (selectedLanguage === 'pa') {
-                                // Punjabi with Indian Punjabi Female voice
-                                responsiveVoice.speak(greetings['pa'], "Hindi Female", {rate: 0.98, pitch: 0.75,volume: 1.25});
-                            } else if (selectedLanguage === 'or') {
-                                // Odia with Indian Odia Female voice
-                                responsiveVoice.speak(greetings['or'], "Hindi Female", {rate: 0.98, pitch: 0.75,volume: 1.25});
-                            }
-
-
-
-
-                        }
-
-                        displayGreeting();
-
-
-                        $("#language-select").change(function () {
-                            displayGreeting();
-                        });
+            // Function to get the selected language and display the greeting
+            function displayGreeting() {
+                const selectedLanguage = $("#language-select").val();
+                const greetingMessage = greetings[selectedLanguage];
+                $(".ChatItem-chatText").text(greetingMessage);
+                if (selectedLanguage === 'en') {
+                    // English with UK English Female voice
+                    responsiveVoice.speak(greetings['en'], "UK English Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                } else if (selectedLanguage === 'hi') {
+                    // Hindi with Indian Hindi Female voice
+                    responsiveVoice.speak(greetings['hi'], "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                } else if (selectedLanguage === 'bn') {
+                    // Bengali with Indian Bengali Female voice
+                    responsiveVoice.speak(greetings['bn'], "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                } else if (selectedLanguage === 'te') {
+                    // Telugu with Indian Telugu Female voice
+                    responsiveVoice.speak(greetings['te'], "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                } else if (selectedLanguage === 'mr') {
+                    // Marathi with Indian Marathi Female voice
+                    responsiveVoice.speak(greetings['mr'], "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                } else if (selectedLanguage === 'ta') {
+                    // Tamil with Indian Tamil Female voice
+                    responsiveVoice.speak(greetings['ta'], "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                } else if (selectedLanguage === 'gu') {
+                    // Gujarati with Indian Gujarati Female voice
+                    responsiveVoice.speak(greetings['gu'], "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                } else if (selectedLanguage === 'kn') {
+                    // Kannada with Indian Kannada Female voice
+                    responsiveVoice.speak(greetings['kn'], "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                } else if (selectedLanguage === 'ml') {
+                    // Malayalam with Indian Malayalam Female voice
+                    responsiveVoice.speak(greetings['ml'], "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                } else if (selectedLanguage === 'pa') {
+                    // Punjabi with Indian Punjabi Female voice
+                    responsiveVoice.speak(greetings['pa'], "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                } else if (selectedLanguage === 'or') {
+                    // Odia with Indian Odia Female voice
+                    responsiveVoice.speak(greetings['or'], "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                }
 
 
 
-                        
 
-                        function askQuestion(question) {
-                            const timestamp = new Date();
-                            const timeString = timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-                            
-                            var chatWindow = $(".ChatWindow");
-                            chatWindow.scrollTop(chatWindow.prop("scrollHeight"));
-                            
+            }
 
-                            
-                            
+            displayGreeting();
 
-                           
 
-                            $('.ChatWindow').append(`
+            $("#language-select").change(function () {
+                displayGreeting();
+            });
+
+
+
+
+
+            function askQuestion(question) {
+                const timestamp = new Date();
+                const timeString = timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+                var chatWindow = $(".ChatWindow");
+                chatWindow.scrollTop(chatWindow.prop("scrollHeight"));
+
+
+
+
+
+
+
+                $('.ChatWindow').append(`
 
                             <div class="ChatItem ChatItem--expert">
                             <div class="ChatItem-meta">
@@ -255,115 +258,166 @@
 
 
                             `);
-                            const formData = new FormData();
-                            formData.append('query', question);
+                const formData = new FormData();
+                formData.append('query', question);
 
-                            const phoneNumber = $('#phoneNumber').val();
-                            const selectedLanguage = $("#language-select").val();
-                            formData.append('phoneNumber', phone);
-                            formData.append('timestamp', timestamp)
-                            formData.append('selectedLanguage', selectedLanguage)
-
-                          
-
-                            $.ajax({
-                                type: 'POST',
-                                url: '/get_response',
-                                data: formData,
-                                processData: false,
-                                contentType: false,
-                                success: function (data) {
-                                    const timeString = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-                                    const selectedLanguage = $("#language-select").val();
-                                    console.log(selectedLanguage);
-                                    
-
-                                    $('.ChatWindow').append(`
-                                        <div class="ChatItem ChatItem--customer">
-                                            <div class="ChatItem-meta">
-                                                <div class="ChatItem-avatar">
-                                                    <img class="ChatItem-avatarImage" src="/static/chatbot.png"  width="100">
-                                                </div>
-                                            </div>
-                                            <div class="ChatItem-chatContent">
-                                                
-                                                <div class="ChatItem-chatText" style="width:70%">${data['result']}</div>
-                                                <div class="ChatItem-timeStamp"><strong>Chat Bot</strong> • Today ${timeString}</div>
-                                            </div>
-                                        </div>
-
-                                    `);
-                                    console.log(data);
-
-                                    var chatWindow = $(".ChatWindow");
-                                    chatWindow.scrollTop(chatWindow.prop("scrollHeight"));
+                const phoneNumber = $('#phoneNumber').val();
+                const selectedLanguage = $("#language-select").val();
+                formData.append('phoneNumber', phone);
+                formData.append('timestamp', timestamp)
+                formData.append('selectedLanguage', selectedLanguage)
 
 
-                                    responsiveVoice.speak(data['result'],"UK English Female",{rate: 0.98, pitch: 0.80,volume: 1.25});
-                                },
-                                error: function (error) {
-                                    console.error(error);
-                                }
-                            });
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/get_response',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        const timeString = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                        const selectedLanguage = $("#language-select").val();
+                        console.log(selectedLanguage);
+                        console.log(data['query'])
+
+
+                        // Check if the result contains "1 room" and append room1 images
+                        if (data['query'].toLowerCase().includes("honeymoon package images")) {
+                            let imgMessage="Have a look at the images in our honeymoon package"
+
+                            // Append chat bot response
+                        $('.ChatWindow').append(`
+            <div class="ChatItem ChatItem--customer">
+                <div class="ChatItem-meta">
+                    <div class="ChatItem-avatar">
+                        <img class="ChatItem-avatarImage" src="/static/chatbot.png" width="100">
+                    </div>
+                </div>
+                <div class="ChatItem-chatContent">
+                    <div class="ChatItem-chatText" style="width:70%">${imgMessage}</div>
+                    <div class="ChatItem-timeStamp"><strong>Chat Bot</strong> • Today ${timeString}</div>
+                </div>
+            </div>
+        `);
+        responsiveVoice.speak(imgMessage, "UK English Female", { rate: 0.98, pitch: 0.80, volume: 1.25 });
+
+
+
+                            let imageGallery = '<div class="image-gallery" style="display: flex; flex-wrap: wrap;">';
+
+                            // Assuming the folder static/room1/ contains image files like room1_1.jpg, room1_2.jpg, etc.
+                            for (let i = 1; i <= 4; i++) { // Change 5 to the number of images in the folder
+                                imageGallery += `
+                    <div class="image-item" style="flex-basis: calc(50% - 10px); margin: 5px;">
+                        <img src="/static/room1/room1_${i}.png" style="width: 100%; height: auto;" alt="Room 1 Image ${i}">
+                    </div>
+                `;
+            }
+
+                            imageGallery += '</div>';
+
+
+                            // Append the image gallery below the bot response
+                            $('.ChatWindow').append(imageGallery);
                         }
 
-                        // FOR MYSQL APPLICATION WE HAVE
-                        // console.log(data);
+                    else{
+                           // Append chat bot response
+                           $('.ChatWindow').append(`
+            <div class="ChatItem ChatItem--customer">
+                <div class="ChatItem-meta">
+                    <div class="ChatItem-avatar">
+                        <img class="ChatItem-avatarImage" src="/static/chatbot.png" width="100">
+                    </div>
+                </div>
+                <div class="ChatItem-chatContent">
+                    <div class="ChatItem-chatText" style="width:70%">${data['result']}</div>
+                    <div class="ChatItem-timeStamp"><strong>Chat Bot</strong> • Today ${timeString}</div>
+                </div>
+            </div>
+        `);
+        responsiveVoice.speak(data['result'], "UK English Female", { rate: 0.98, pitch: 0.80, volume: 1.25 });
 
-                        // for agent over here
-                        // <div class="ChatItem-chatText">${data['output']}</div>
+
+                    }
+
+                     
+
+                        
+
+                        console.log(data);
+
+                        // Scroll to the bottom of the chat window
+                        var chatWindow = $(".ChatWindow");
+                        chatWindow.scrollTop(chatWindow.prop("scrollHeight"));
+
+                    },
+                    error: function (error) {
+                        console.error(error);
+                    }
+                });
+
+            }
+
+            // FOR MYSQL APPLICATION WE HAVE
+            // console.log(data);
+
+            // for agent over here
+            // <div class="ChatItem-chatText">${data['output']}</div>
 
 
-                        // FOR RAG APPLICATION
-                        // <div class="ChatItem-chatText">${data['result']}</div>
+            // FOR RAG APPLICATION
+            // <div class="ChatItem-chatText">${data['result']}</div>
 
-                        // FOR OLlama APPLICATION
-                        // <div class="ChatItem-chatText">${data['message']['content']}</div>
+            // FOR OLlama APPLICATION
+            // <div class="ChatItem-chatText">${data['message']['content']}</div>
 
 
-                        $("#voice-btn").click(function () {
-                            if ('webkitSpeechRecognition' in window) {
-                                const recognition = new webkitSpeechRecognition();
-                                const selectedLanguage = $("#language-select").val();
-                                recognition.lang = selectedLanguage;
+            $("#voice-btn").click(function () {
+                if ('webkitSpeechRecognition' in window) {
+                    const recognition = new webkitSpeechRecognition();
+                    const selectedLanguage = $("#language-select").val();
+                    recognition.lang = selectedLanguage;
 
-                                // recognition.lang = "en"; // Set the language to English
+                    // recognition.lang = "en"; // Set the language to English
 
-                                recognition.onresult = function (event) {
-                                    const result = event.results[0][0].transcript;
-                                    appendMessage("Me", result); // Append the recognized speech to the UI
+                    recognition.onresult = function (event) {
+                        const result = event.results[0][0].transcript;
+                        appendMessage("Me", result); // Append the recognized speech to the UI
 
-                                    var chatWindow = $(".ChatWindow");
-                                    chatWindow.scrollTop(chatWindow.prop("scrollHeight"));
-                                    askQuestion(result);
-                                };
-                                recognition.start();
-                            } else {
-                                console.error('Web Speech API not supported in this browser.');
-                            }
-                        });
+                        var chatWindow = $(".ChatWindow");
+                        chatWindow.scrollTop(chatWindow.prop("scrollHeight"));
+                        askQuestion(result);
+                    };
+                    recognition.start();
+                } else {
+                    console.error('Web Speech API not supported in this browser.');
+                }
+            });
 
-                        $("#question").keypress(function (e) {
-                            if (e.which === 13) {
-                                askQuestion($("#question").val());
+            $("#question").keypress(function (e) {
+                if (e.which === 13) {
+                    askQuestion($("#question").val());
 
-                                $("#question").val("");
+                    $("#question").val("");
 
-                                var chatWindow = $(".ChatWindow");
-                                chatWindow.scrollTop(chatWindow.prop("scrollHeight"));
+                    var chatWindow = $(".ChatWindow");
+                    chatWindow.scrollTop(chatWindow.prop("scrollHeight"));
 
-                            }
-                        });
+                }
+            });
 
 
         });
 
-   
-              
+
+
 
 
 
     </script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </body>
+
 </html>
