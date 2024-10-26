@@ -35,6 +35,15 @@
         <div id="chatHistory"></div>
         <select id="language-select">
             <option value="en">English</option>
+            <option value="sq">Albanian</option>
+            <option value="hy">Armenian</option>
+            <option value="de">German</option>
+            <option value="it">Italian</option>
+            <option value="zh">Chinese</option>
+            <option value="ja">Japanese</option>
+            <option value="pt">Portuguese</option>
+            <option value="ar">Arabic</option>
+            <option value="ko">Korean</option>
             <option value="hi">Hindi</option>
             <option value="bn">Bengali</option>
             <option value="te">Telugu</option>
@@ -46,7 +55,6 @@
             <option value="ml">Malayalam</option>
             <option value="pa">Punjabi</option>
             <option value="or">Odia</option>
-            <!-- Add more language options as needed -->
         </select>
 
         <div id="chat-container">
@@ -103,7 +111,6 @@
         // Get the phone number from the query parameter
 
 
-
         const phone = "{{ phone }}";
         // Set the value of the input tag
         document.getElementById("phoneNumber").value = phone;
@@ -158,11 +165,66 @@
             'ml': 'ഹലോ! ഞാൻ നിനക്ക് എങ്ങനെ സഹായിക്കാൻ സാധിക്കും?',
             'pa': 'ਹੈਲੋ! ਮੈ ਤੁਹਾਨੂੰ ਕਿਵੇਂ ਸਹਾਇਤਾ ਕਰ ਸਕਦਾ ਹਾਂ?',
             'or': 'ହେଲୋ! ମୁଁ ତୁମକୁ କେମିତି ସହାୟ୍ୟ କରିପାରିବ?',
+            'sq': 'Përshëndetje! Si mund t’ju ndihmoj?',
+            'hy': 'Բարեւ Ձեզ! Ինչպես կարող եմ օգնել?',
+            'de': 'Hallo! Wie kann ich Ihnen helfen?',
+            'it': 'Ciao! Come posso aiutarti?',
+            'zh': '你好！我能帮你什么忙？',
+            'ja': 'こんにちは！どうお手伝いしましょうか？',
+            'pt': 'Olá! Como posso ajudá-lo?',
+            'ar': 'مرحبًا! كيف يمكنني مساعدتك؟',
+            'ko': '안녕하세요! 어떻게 도와드릴까요?'
         };
 
 
+        const honeymoonPackageImages = {
+            'en': 'Honeymoon Package Images',
+            'hi': 'हनीमून पैकेज छवियाँ',
+            'bn': 'হানিমুন প্যাকেজের ছবি',
+            'te': 'హనీమూన్ ప్యాకేజీ ఇమేజెస్',
+            'mr': 'हनीमून पॅकेज इमेजेस',
+            'ta': 'ஹனிமூன் தொகுப்பு படங்கள்',
+            'ur': 'ہنی مون پیکیج کی تصاویر',
+            'gu': 'હનીમૂન પેકેજ છબીઓ',
+            'kn': 'ಹನಿಮೂನ್ ಪ್ಯಾಕೇಜ್ ಇಮೇಜಸ್',
+            'ml': 'ഹനിമൂൺ പാക്കേജ് ചിത്രങ്ങൾ',
+            'pa': 'ਹਨੀਮੂਨ ਪੈਕੇਜ ਦੀਆਂ ਤਸਵੀਰਾਂ',
+            'or': 'ହନିମୁନ୍ ପ୍ୟାକେଜ୍ ଚିତ୍ରଗୁଡିକ',
+            'sq': 'Imazhe të Paketës së Hënës së Mjaltit',
+            'hy': 'Հարսանեկան Փաթեթի Ցուցանակներ',
+            'de': 'Honeymoon-Paketbilder',
+            'it': 'Immagini del pacchetto luna di miele',
+            'zh': '蜜月套餐图片',
+            'ja': 'ハネムーンパッケージの画像',
+            'pt': 'Imagens do pacote de lua de mel',
+            'ar': 'صور حزمة شهر العسل',
+            'ko': '허니문 패키지 이미지'
+        };
 
 
+        const familyPackageImages = {
+            'en': 'family package images',
+            'hi': 'परिवार पैकेज छवियाँ',
+            'bn': 'পারিবারিক প্যাকেজের ছবি',
+            'te': 'కుటుంబ ప్యాకేజీ ఇమేజెస్',
+            'mr': 'कुटुंब पॅकेज इमेजेस',
+            'ta': 'குடும்பத்துக்கான தொகுப்பு படங்கள்',
+            'ur': 'فیملی پیکیج کی تصاویر',
+            'gu': 'પરિવાર પેકેજ છબીઓ',
+            'kn': 'ಕುಟುಂಬ ಪ್ಯಾಕೇಜ್ ಇಮೇಜಸ್',
+            'ml': 'കുടുംബ പാക്കേജ് ചിത്രങ്ങൾ',
+            'pa': 'ਪਰਿਵਾਰ ਪੈਕੇਜ ਦੀਆਂ ਤਸਵੀਰਾਂ',
+            'or': 'କୁଟୁମ୍ବ ପ୍ୟାକେଜ୍ ଚିତ୍ରଗୁଡିକ',
+            'sq': 'Imazhe të Paketës Familjare',
+            'hy': 'Ընտանիքի Փաթեթի Ցուցանակներ',
+            'de': 'Familienpaketbilder',
+            'it': 'Immagini del pacchetto familiare',
+            'zh': '家庭套餐图片',
+            'ja': 'ファミリーパッケージの画像',
+            'pt': 'Imagens do pacote familiar',
+            'ar': 'صور حزمة الأسرة',
+            'ko': '가족 패키지 이미지'
+        };
 
         $(document).ready(function () {
             // var userInput = $('#userInput').val();
@@ -170,50 +232,74 @@
                 $("#chat-display").append("<p><strong>" + sender + ": </strong>" + message + "</p>");
             }
 
-            // Function to get the selected language and display the greeting
             function displayGreeting() {
                 const selectedLanguage = $("#language-select").val();
                 const greetingMessage = greetings[selectedLanguage];
                 $(".ChatItem-chatText").text(greetingMessage);
+
                 if (selectedLanguage === 'en') {
                     // English with UK English Female voice
-                    responsiveVoice.speak(greetings['en'], "UK English Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                    responsiveVoice.speak(greetingMessage, "UK English Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
                 } else if (selectedLanguage === 'hi') {
                     // Hindi with Indian Hindi Female voice
-                    responsiveVoice.speak(greetings['hi'], "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                    responsiveVoice.speak(greetingMessage, "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
                 } else if (selectedLanguage === 'bn') {
                     // Bengali with Indian Bengali Female voice
-                    responsiveVoice.speak(greetings['bn'], "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                    responsiveVoice.speak(greetingMessage, "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
                 } else if (selectedLanguage === 'te') {
                     // Telugu with Indian Telugu Female voice
-                    responsiveVoice.speak(greetings['te'], "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                    responsiveVoice.speak(greetingMessage, "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
                 } else if (selectedLanguage === 'mr') {
                     // Marathi with Indian Marathi Female voice
-                    responsiveVoice.speak(greetings['mr'], "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                    responsiveVoice.speak(greetingMessage, "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
                 } else if (selectedLanguage === 'ta') {
                     // Tamil with Indian Tamil Female voice
-                    responsiveVoice.speak(greetings['ta'], "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                    responsiveVoice.speak(greetingMessage, "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
                 } else if (selectedLanguage === 'gu') {
                     // Gujarati with Indian Gujarati Female voice
-                    responsiveVoice.speak(greetings['gu'], "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                    responsiveVoice.speak(greetingMessage, "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
                 } else if (selectedLanguage === 'kn') {
                     // Kannada with Indian Kannada Female voice
-                    responsiveVoice.speak(greetings['kn'], "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                    responsiveVoice.speak(greetingMessage, "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
                 } else if (selectedLanguage === 'ml') {
                     // Malayalam with Indian Malayalam Female voice
-                    responsiveVoice.speak(greetings['ml'], "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                    responsiveVoice.speak(greetingMessage, "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
                 } else if (selectedLanguage === 'pa') {
                     // Punjabi with Indian Punjabi Female voice
-                    responsiveVoice.speak(greetings['pa'], "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                    responsiveVoice.speak(greetingMessage, "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
                 } else if (selectedLanguage === 'or') {
                     // Odia with Indian Odia Female voice
-                    responsiveVoice.speak(greetings['or'], "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                    responsiveVoice.speak(greetingMessage, "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                } else if (selectedLanguage === 'sq') {
+                    // Albanian with Albanian Male voice
+                    responsiveVoice.speak(greetingMessage, "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                } else if (selectedLanguage === 'hy') {
+                    // Armenian with Armenian Male voice
+                    responsiveVoice.speak(greetingMessage, "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                } else if (selectedLanguage === 'de') {
+                    // German with German Female voice
+                    responsiveVoice.speak(greetingMessage, "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                } else if (selectedLanguage === 'it') {
+                    // Italian with Italian Female voice
+                    responsiveVoice.speak(greetingMessage, "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                } else if (selectedLanguage === 'zh') {
+                    // Chinese with Chinese Female voice
+                    responsiveVoice.speak(greetingMessage, "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                } else if (selectedLanguage === 'ja') {
+                    // Japanese with Japanese Female voice
+                    responsiveVoice.speak(greetingMessage, "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                } else if (selectedLanguage === 'pt') {
+                    // Portuguese with Portuguese Female voice
+                    responsiveVoice.speak(greetingMessage, "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                } else if (selectedLanguage === 'ar') {
+                    // Arabic with Arabic Male voice
+                    responsiveVoice.speak(greetingMessage, "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
+                } else if (selectedLanguage === 'ko') {
+                    // Korean with Korean Female voice
+                    responsiveVoice.speak(greetingMessage, "Hindi Female", { rate: 0.98, pitch: 0.75, volume: 1.25 });
                 }
-
-
-
-
             }
+
 
             displayGreeting();
 
@@ -282,12 +368,17 @@
                         console.log(data['query'])
 
 
+                        console.log(honeymoonPackageImages[selectedLanguage])
+
+
+
+
                         // Check if the result contains "1 room" and append room1 images
-                        if (data['query'].toLowerCase().includes("honeymoon package images")) {
-                            let imgMessage="Have a look at the images in our honeymoon package"
+                        if (data['query'].toLowerCase().includes(honeymoonPackageImages[selectedLanguage].toLowerCase())) {
+                            let imgMessage = honeymoonPackageImages[selectedLanguage]
 
                             // Append chat bot response
-                        $('.ChatWindow').append(`
+                            $('.ChatWindow').append(`
             <div class="ChatItem ChatItem--customer">
                 <div class="ChatItem-meta">
                     <div class="ChatItem-avatar">
@@ -300,7 +391,7 @@
                 </div>
             </div>
         `);
-        responsiveVoice.speak(imgMessage, "UK English Female", { rate: 0.98, pitch: 0.80, volume: 1.25 });
+                            responsiveVoice.speak(imgMessage, "Hindi Female", { rate: 0.98, pitch: 0.80, volume: 1.25 });
 
 
 
@@ -313,7 +404,7 @@
                         <img src="/static/room1/room1_${i}.png" style="width: 100%; height: auto;" alt="Room 1 Image ${i}">
                     </div>
                 `;
-            }
+                            }
 
                             imageGallery += '</div>';
 
@@ -322,9 +413,54 @@
                             $('.ChatWindow').append(imageGallery);
                         }
 
-                    else{
-                           // Append chat bot response
-                           $('.ChatWindow').append(`
+                        else if (data['query'].toLowerCase().includes(familyPackageImages [selectedLanguage].toLowerCase())) {
+                                        let imgMessage = familyPackageImages [selectedLanguage]
+
+                                        // Append chat bot response
+                                        $('.ChatWindow').append(`
+                        <div class="ChatItem ChatItem--customer">
+                            <div class="ChatItem-meta">
+                                <div class="ChatItem-avatar">
+                                    <img class="ChatItem-avatarImage" src="/static/chatbot.png" width="100">
+                                </div>
+                            </div>
+                            <div class="ChatItem-chatContent">
+                                <div class="ChatItem-chatText" style="width:70%">${imgMessage}</div>
+                                <div class="ChatItem-timeStamp"><strong>Chat Bot</strong> • Today ${timeString}</div>
+                            </div>
+                        </div>
+                    `);
+                                        responsiveVoice.speak(imgMessage, "Hindi Female", { rate: 0.98, pitch: 0.80, volume: 1.25 });
+
+
+
+                                        let imageGallery = '<div class="image-gallery" style="display: flex; flex-wrap: wrap;">';
+
+                                        // Assuming the folder static/room1/ contains image files like room1_1.jpg, room1_2.jpg, etc.
+                                        for (let i = 1; i <= 4; i++) { // Change 5 to the number of images in the folder
+                                            imageGallery += `
+                                <div class="image-item" style="flex-basis: calc(50% - 10px); margin: 5px;">
+                                    <img src="/static/room2/room2_${i}.jpg" style="width: 100%; height: auto;" alt="Room 1 Image ${i}">
+                                </div>
+                            `;
+                                        }
+
+                                        imageGallery += '</div>';
+
+
+                                        // Append the image gallery below the bot response
+                                        $('.ChatWindow').append(imageGallery);
+                                    }
+
+
+
+
+
+
+
+                        else {
+                            // Append chat bot response
+                            $('.ChatWindow').append(`
             <div class="ChatItem ChatItem--customer">
                 <div class="ChatItem-meta">
                     <div class="ChatItem-avatar">
@@ -337,14 +473,14 @@
                 </div>
             </div>
         `);
-        responsiveVoice.speak(data['result'], "UK English Female", { rate: 0.98, pitch: 0.80, volume: 1.25 });
+                            responsiveVoice.speak(data['result'], "Hindi Female", { rate: 0.98, pitch: 0.80, volume: 1.25 });
 
 
-                    }
+                        }
 
-                     
 
-                        
+
+
 
                         console.log(data);
 
